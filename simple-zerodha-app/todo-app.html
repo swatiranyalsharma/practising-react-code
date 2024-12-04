@@ -1,0 +1,16 @@
+
+<body>
+    Title_______<input type="text" placeholder="add todo" id="tittle"><br><br>
+    Description_<input type="text" placeholder="add todo" id="description"><br><br>
+    <button id="buttonAdd" onclick="addToDO()">Add todo</button>
+    <div id="container"></div>
+</body>
+<script>
+    function addToDO(){
+        const input1 = document.getElementById('tittle');
+        const input2 = document.getElementById('description');
+        const newElement = document.createElement('p');
+        newElement.innerHTML = `${input1.value}<br>${input2.value}`;
+        document.getElementById('container').innerHTML = `${input1.value}<br>${input2.value}`;
+    }
+</script>

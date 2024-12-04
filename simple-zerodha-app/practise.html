@@ -1,0 +1,19 @@
+<body>
+<input type="text" placeholder="1st number" id="input1"></input><br><br>
+<input type="text" placeholder="2nd number" id="input2"></input><br><br>
+<button onclick="calSum()" id="button"> calulate sum</button>
+<p id="para"></p>
+</body>
+<script>
+    function calSum(){
+        let n1 = Number(document.getElementById('input1').value);
+        let n2 = Number(document.getElementById('input2').value);
+        // let sum =  n1+n2;
+        fetch(`http://sum-server.100xdevs.com/sum?a=${n1}&b=${n2}`).then(function(res){
+            document.getElementById('para').innerHTML = `Sum is ${sum}`;
+            console.log(document.getElementById('para').text);
+        });
+        
+        
+    }
+</script>
